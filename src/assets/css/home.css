@@ -1,0 +1,15 @@
+#logo_area_wrapper{
+    
+    padding-left: 5%;
+}
+
+#content_area_wrapper{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%); 
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
