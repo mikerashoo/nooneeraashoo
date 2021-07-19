@@ -13,6 +13,20 @@ export const menus = [
         amharic: 'ተረት-ተረት',
         english: 'Story',
         icon: <MessageFilled />,
+        link: '/tochoo'
+    }, 
+    {
+        name: "Turiteena'o",
+        amharic: 'እንቆቅልሽ',
+        english: 'Riddles',
+        icon: <WechatFilled />,
+        link: '/turito'
+    }, 
+    {
+        name: "Shaahiyee Yibaatena'o",
+        amharic: 'ምሳሌያዊ አነጋገር',
+        english: 'Proverbs',
+        icon: <FilterFilled />,
         link: '/'
     }, 
     {
@@ -34,20 +48,6 @@ export const menus = [
         amharic: 'ስለ ከፋ',
         english: 'About kafa',
         icon: <CrownFilled />,
-        link: '/'
-    }, 
-    {
-        name: "Turiteena'o",
-        amharic: 'እንቆቅልሽ',
-        english: 'Riddles',
-        icon: <WechatFilled />,
-        link: '/'
-    }, 
-    {
-        name: "Shaahiyee Yibaatena'o",
-        amharic: 'ምሳሌያዊ አነጋገር',
-        english: 'Proverbs',
-        icon: <FilterFilled />,
         link: '/'
     }, 
     {

@@ -8,6 +8,8 @@ import 'antd/dist/antd.css';
 import { FullScreeWrapper } from './styled/common';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styled/theme';
+import store from './store';
+import { Provider } from 'react-redux';
  
 function App() {
     const [message, setMessage] = useState('SELECT * FROM repositories');
@@ -18,11 +20,13 @@ function App() {
     }
 
     return (
+        <Provider store={store}>
         <ThemeProvider theme={theme}>
         <FullScreeWrapper>
             <PageRoutes />
         </FullScreeWrapper>
         </ThemeProvider>
+        </Provider>
     );
 }
 

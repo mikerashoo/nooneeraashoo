@@ -1,44 +1,39 @@
 import { Col, Input, Row, Select } from 'antd';
-import React, {useState} from 'react'
-import { useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import React from 'react'
+import { useEffect } from 'react'; 
+import { useDispatch, useSelector } from 'react-redux';
 import { letters } from '../constants/alphabets';
-import Logo from '../fragments/Logo';
-import sendAsync from '../message-control/renderer';
-import { FullScreeWrapper, VerticallyAligned } from '../styled/common';
+import Logo from '../fragments/Logo'; 
+import { FullScreeWrapper } from '../styled/common';
 import { AlphabetLink, ContentWrapper, LogoWrapper, WordsWrapper } from '../styled/dictionary';
 import '../assets/css/dictionary.css';
 import DictionaryWords from '../fragments/DictionaryWords';
-function Dictionary() {
-    const [statement, setStatement] = useState('SELECT * FROM words');
-    const [words, setWords] = useState([]);
-    const [error, setError] = useState(null);
-    const [selectedLanguage, setSelectedLanguage] = useState('kaffi');
-    const [selectedLetter, setSelectedLetter] = useState(null);
+import {fetchWordsAction, searchWordAction, selectLetterAction, selectLanguageAction} from '../actions/wordsActions'
+import WordDetail from '../fragments/WordDetail';
 
-    const fetchAllWords = (sql) => {
-        console.log(sql);
-        sendAsync(sql).then((result) => onWordsFetch(result));
-    }
+function Dictionary() {  
+    const words_state = useSelector(state => state.words)
+    const dispatch = useDispatch();
     
-    const onWordsFetch = (result) => {
-        let words = JSON.stringify(result, null, 2);
-        
-        if(words){
-            setWords(result);
-        }
-    }
-    useEffect(() => {        
-        fetchAllWords(statement); 
-    }, [statement]);
-
     const onLanguageSelect = lang => {
-        setSelectedLanguage(lang);
+        dispatch(selectLanguageAction(lang)); 
+    }
+     
+    const onLetterSelect = letter => {
+        dispatch(selectLetterAction(letter)); 
     }
 
-    console.log('selected letter', selectedLetter);
-    
+    useEffect(() => {     
+            dispatch(fetchWordsAction()); 
+    }, [dispatch]);
+
+    const onSearch = value => { 
+        dispatch(searchWordAction(value, selectedLanguage));
+    }
+
     const {Option} = Select;
+    const selectedLanguage = words_state.selectedLanguage; 
+    const selectedLetter = words_state.selectedLetter;   
     const selectBefore = (
         <Select defaultValue={selectedLanguage} className="select-before" onChange={onLanguageSelect}>
         <Option value="kaffi">Kaffi</Option>
@@ -57,7 +52,7 @@ function Dictionary() {
             <div id="alphabets_wrapper_ul">
             {
                 letters.map(letter => 
-                    <AlphabetLink key={letter} selected={selectedLetter == letter} onClick={() => setSelectedLetter(letter)}> {letter}</AlphabetLink>
+                    <AlphabetLink key={letter} selected={selectedLetter == letter} onClick={() => onLetterSelect(letter)}> {letter}</AlphabetLink>
                     )
                 }
                 </div>
@@ -69,13 +64,13 @@ function Dictionary() {
                 <Row style={{height: '100%'}}>
                 <WordsWrapper span={6}>
                 <div style={{ padding: 16 }}>
-                <Input.Search addonBefore={selectBefore} enterButton/>
+                <Input.Search addonBefore={selectBefore} enterButton onSearch={onSearch}/>
                 </div>
-                    <DictionaryWords words={words} lang={selectedLanguage}/>
+                    <DictionaryWords />
                 </WordsWrapper>
                 
-                <Col flex="auto">
-                Tempor consequat labore laborum occaecat laborum non.
+                <Col flex="auto" style={{padding: '5%'}}>
+                    <WordDetail />
                 </Col>
                 </Row>
                 

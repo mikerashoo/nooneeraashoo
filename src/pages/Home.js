@@ -28,7 +28,7 @@ function Home() {
                         menus.map((menu, k) => 
                         <Col span={6} key={k}>  
                             <Link to={menu.link}>
-                            <MenuItem to="/">
+                            <MenuItem>
                             <h1>
                             <MenuIconWrapper>
                             {menu.icon}

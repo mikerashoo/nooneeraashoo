@@ -48,7 +48,6 @@ export const WordsWrapper = styled(Col)`
     flex: 1;
 `
 
-
 export const ClickableWord = styled.li`
     position: relative;
     border: solid 1px white;  
@@ -63,5 +62,22 @@ export const ClickableWord = styled.li`
         border: 1px solid #cccccc;
         background-color: white;
         color: green; 
+    }
+    ${props =>
+    props.selected &&
+    css`  
+        border-right: 10px solid green;
+        background-color: white;
+        color: green; 
+    `}
+`
+
+export const SoundWrapper = styled.span`
+    font-size: 2em; 
+    cursor: pointer; 
+    &:hover {
+        transition: all 0.2s ease-out;  
+        color: green; 
+        font-size: 2.5em;
     }
 `
