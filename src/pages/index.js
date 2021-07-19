@@ -4,6 +4,7 @@ import Dictionary from './Dictionary';
 import Home from './Home'
 import Tochoo from './Tochoo'
 import Turito from './Turito'
+import Shaahiyoo from './Shaahiyoo'
 function PageRoutes() {
     return (
         <Router>
@@ -16,6 +17,9 @@ function PageRoutes() {
                 </Route>
                 <Route path="/turito">
                     <Turito />
+                </Route>
+                <Route path="/shaahiyoo">
+                    <Shaahiyoo />
                 </Route>
                 <Route path="/">
                     <Home />

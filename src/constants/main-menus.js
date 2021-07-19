@@ -27,7 +27,7 @@ export const menus = [
         amharic: 'ምሳሌያዊ አነጋገር',
         english: 'Proverbs',
         icon: <FilterFilled />,
-        link: '/'
+        link: '/shaahiyoo'
     }, 
     {
         name: 'Doyoo',
