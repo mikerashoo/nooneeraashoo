@@ -6,28 +6,27 @@ import { FullScreeWrapper, VerticallyAligned } from '../styled/common'
 import { CircleButton, ContentWrapper, LogoWrapper, TuritoDetailWrapper } from '../styled/turito'  
 import {TOURISM_IMGS} from '../assets/imgs/tourisms'
 import { useState } from 'react'
-import {turitos} from '../assets/files/turito'
+import {shaahiyoos} from '../assets/files/shaahiyoo'
 import {DoubleLeftOutlined, DoubleRightOutlined} from '@ant-design/icons'
 function Shaahiyoo() {
-    
-    const img_counts = TOURISM_IMGS.length;
-    const turito_counts = turitos.length;
-    const [imgIndex, setimgIndex] = useState(0);
-    const [turitoIndex, setTuritoIndex] = useState(0);
-    const onChangeTurito = is_next => {
-        if(is_next){
-            if(imgIndex == img_counts - 1){
-                setimgIndex(0);
-            }
-            else {
-                setimgIndex(imgIndex + 1);
-            }
-            
-            if(turitoIndex == turito_counts - 1){
-                setTuritoIndex(0)
+     
+    const shaahiyoo_count = shaahiyoos.length; 
+    const [shaahiyooIndex, setShaahiyooIndex] = useState(0);
+    const onChangeShaahiyoo = is_next => {
+        if(is_next){             
+            if(shaahiyooIndex == shaahiyoo_count - 1){
+                setShaahiyooIndex(0)
             }
             else{
-                setTuritoIndex(turitoIndex + 1)
+                setShaahiyooIndex(shaahiyooIndex + 1)
+            }
+        }
+        else {
+            if(shaahiyooIndex == 0){
+                setShaahiyooIndex(shaahiyoo_count - 1)
+            }
+            else{
+                setShaahiyooIndex(shaahiyooIndex - 1)
             }
         }
         
@@ -51,32 +50,19 @@ function Shaahiyoo() {
                 <Row style={{height: '100%'}}>
                     <Col span={2}>
                         <VerticallyAligned> 
-                            <CircleButton> <DoubleLeftOutlined /> </CircleButton>
+                            <CircleButton  onClick={() => onChangeShaahiyoo(false)}> <DoubleLeftOutlined /> </CircleButton>
                         </VerticallyAligned>
                     </Col>
                     <Col span={18} offset={1}>
-                        <VerticallyAligned>                     
-                            <TuritoDetailWrapper> 
-                                <Row gutter={[16, 16]}>
-                                    <Col span={6}>
-                                        <img src={TOURISM_IMGS[imgIndex]} style={{height: '150px', width: '100%'}}/>
-                                    </Col>
-                                    <Col span={18}>
-                                        <VerticallyAligned>
-                                            <Typography.Title>Turi turi....</Typography.Title>
-                                            <Typography.Paragraph italic style={{fontSize: '1.4em'}}>
-                                            {turitos[turitoIndex].question }
-                                            </Typography.Paragraph>
-                                            <Alert message={turitos[turitoIndex].answer } type="info" style={{width: 'max-content'}}/>                                
-                                        </VerticallyAligned>
-                                    </Col>
-                                </Row>
-                            </TuritoDetailWrapper>
+                        <VerticallyAligned style={{textAlign: 'center'}}>                     
+                            <Typography.Text italic style={{fontSize: '3em'}}>
+                               " {shaahiyoos[shaahiyooIndex].kafinoonoo } "
+                            </Typography.Text>
                         </VerticallyAligned>
                     </Col>
                     <Col span={2} offset={1}>
                         <VerticallyAligned>
-                            <CircleButton onClick={() => onChangeTurito(true)}> <DoubleRightOutlined /> </CircleButton>                    
+                            <CircleButton onClick={() => onChangeShaahiyoo(true)}> <DoubleRightOutlined /> </CircleButton>                    
                         </VerticallyAligned>
                     </Col>
                 </Row>

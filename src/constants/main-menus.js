@@ -34,7 +34,7 @@ export const menus = [
         amharic: 'ከፍኖኖ ትምህርት',
         english: 'Kafinoonoo education',
         icon: <ReadFilled />,
-        link: '/'
+        link: '/education'
     }, 
     {
         name: "Shuunee miheena'o",

@@ -6,6 +6,7 @@ export default function send(sql) {
         ipcRenderer.once('asynchronous-reply', (_, arg) => {
             resolve(arg);
         });
+
         ipcRenderer.send('asynchronous-message', sql);
     });
 }

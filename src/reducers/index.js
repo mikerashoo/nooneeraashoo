@@ -2,11 +2,12 @@ import { combineReducers } from 'redux';
 
 import wordsReducer from './wordsReducer';
 import tochooReducer from './tochooReducer';
-
-// right now we have only 1 reducer, but lets use this format of combineReducers so you can add more later if you need to.
+import educationReducer from './educationReducer';
+ 
 const rootReducer = combineReducers({
   words: wordsReducer,
-  tochooState: tochooReducer
+  tochooState: tochooReducer,
+  educationState: educationReducer
 });
 
 export default rootReducer;
