@@ -1,5 +1,5 @@
 import React from 'react'
-import {CrownFilled, DribbbleCircleFilled, FilterFilled, FlagFilled, MessageFilled, ReadFilled, ScheduleFilled, TranslationOutlined, WechatFilled} from '@ant-design/icons'
+import {CrownFilled, DribbbleCircleFilled, FilterFilled, FlagFilled, MessageFilled, ReadFilled, ScheduleFilled, TranslationOutlined, WechatFilled, WindowsOutlined} from '@ant-design/icons'
 export const menus = [
     {
         name: 'Dikishiineeri',
@@ -37,6 +37,13 @@ export const menus = [
         link: '/education'
     }, 
     {
+        name: "Ariyaa Bedeena'o",
+        amharic: 'ማወቅ ያሉበን',
+        english: 'Things to know',
+        icon: <WindowsOutlined />,
+        link: '/general'
+    }, 
+    {
         name: "Shuunee miheena'o",
         amharic: 'የሥራ ቃላት',
         english: 'Office words',
@@ -50,11 +57,5 @@ export const menus = [
         icon: <CrownFilled />,
         link: '/'
     }, 
-    {
-        name: "Turiste xaa'eena'o",
-        amharic: 'የቱርዝም ቦታዎች',
-        english: 'Tourist sites',
-        icon: <DribbbleCircleFilled />,
-        link: '/'
-    }, 
+   
 ]

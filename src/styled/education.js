@@ -26,13 +26,21 @@ export const ConversationDateWeekWrapper = styled.div`
     display : flex;
 `
 export const NumberLetterWrapper = styled.div`
-    position: absolute;  
-    padding: 2% 3%;
-    background-color: red;
+    position: absolute;   
     left: 2%; 
     right: 2%;  
     bottom: 2%;
-    top: 82%;
+    top: 82%; 
+`
+
+export const LetterNumber = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+    :hover{
+        background-color: #eeeeee;
+    }
 `
 
 export const WordsWrapper = styled(Col)`

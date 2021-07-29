@@ -72,7 +72,9 @@ function Education() {
                     </Col>
                 </Row> 
                 </ConversationDateWeekWrapper>
-         <NumberLetterWrapper>?</NumberLetterWrapper>
+         <NumberLetterWrapper>
+             <AlphabetNumber  />
+         </NumberLetterWrapper>
           
         </ContentWrapper>        
         </FullScreeWrapper>
