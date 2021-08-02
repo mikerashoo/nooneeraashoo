@@ -7,6 +7,8 @@ import Turito from './Turito'
 import Shaahiyoo from './Shaahiyoo'
 import Education from './Education'
 import Generals from './Generals'
+import Shuunoo from './Shuunoo'
+import AboutKeffa from './AboutKeffa'
 function PageRoutes() {
     return (
         <Router>
@@ -28,6 +30,12 @@ function PageRoutes() {
                 </Route>  
                 <Route path="/general">
                     <Generals />
+                </Route> 
+                <Route path="/shuunoo">
+                    <Shuunoo />
+                </Route>  
+                <Route path="/aboutkeffa">
+                    <AboutKeffa />
                 </Route>
                 <Route path="/">
                     <Home />

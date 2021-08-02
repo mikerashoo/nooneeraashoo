@@ -48,14 +48,14 @@ export const menus = [
         amharic: 'የሥራ ቃላት',
         english: 'Office words',
         icon: <FlagFilled />,
-        link: '/'
+        link: '/shuunoo'
     }, 
     {
         name: 'Kaffi',
         amharic: 'ስለ ከፋ',
         english: 'About kafa',
         icon: <CrownFilled />,
-        link: '/'
+        link: '/aboutkeffa'
     }, 
    
 ]
